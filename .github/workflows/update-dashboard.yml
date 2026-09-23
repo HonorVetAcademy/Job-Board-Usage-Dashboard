@@ -1,0 +1,111 @@
+name: Update Job Portal Dashboard
+
+on:
+  push:
+    paths:
+      - "data/raw/**"
+      - "data/manual/**"
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      period_ending:
+        description: "Period ending date (YYYY-MM-DD) to (re)process"
+        required: false
+      period_days:
+        description: "Number of days this period covers"
+        required: false
+        default: "7"
+      force:
+        description: "Reprocess even if this period already exists"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Detect new raw-data folders
+        id: detect
+        run: |
+          # Find dated subfolders under data/raw/ that don't yet have a matching row in the history CSV
+          python3 - <<'EOF'
+          import csv, os, json
+          raw_root = "data/raw"
+          history_path = "data/history/weekly_input.csv"
+          processed = set()
+          if os.path.exists(history_path):
+              with open(history_path, newline="") as f:
+                  processed = {row["period_ending"] for row in csv.DictReader(f)}
+          pending = []
+          if os.path.isdir(raw_root):
+              for name in sorted(os.listdir(raw_root)):
+                  if os.path.isdir(os.path.join(raw_root, name)) and name not in processed:
+                      pending.append(name)
+          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+              out.write(f"pending={json.dumps(pending)}\n")
+          print("Pending periods:", pending)
+          EOF
+
+      - name: Run pipeline for each pending period (push-triggered)
+        if: github.event_name == 'push'
+        run: |
+          python3 - <<'EOF'
+          import json, os, subprocess
+          pending = json.loads('''${{ steps.detect.outputs.pending }}''')
+          for period in pending:
+              subprocess.run(
+                  ["python3", "build.py", "--raw-dir", f"data/raw/{period}",
+                   "--period-ending", period, "--period-days", "7"],
+                  check=True,
+              )
+          EOF
+
+      - name: Run pipeline for manually specified period (workflow_dispatch)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.period_ending != ''
+        run: |
+          FORCE_FLAG=""
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then FORCE_FLAG="--force"; fi
+          python3 build.py --raw-dir "data/raw/${{ github.event.inputs.period_ending }}" \
+            --period-ending "${{ github.event.inputs.period_ending }}" \
+            --period-days "${{ github.event.inputs.period_days }}" $FORCE_FLAG
+
+      - name: Commit updated history + outputs back to the repo
+        run: |
+          git config user.name "dashboard-bot"
+          git config user.email "actions@github.com"
+          git add data/history output docs
+          git diff --cached --quiet || git commit -m "Auto-update dashboard [skip ci]"
+          git push
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy-pages:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

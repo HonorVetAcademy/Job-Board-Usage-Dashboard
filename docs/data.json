@@ -1,0 +1,193 @@
+{
+  "period": "2026-09-15",
+  "kpis": {
+    "total_spend": 13797.055,
+    "total_submissions": 287.0,
+    "total_interviews": 37.0,
+    "total_offers": 25.0,
+    "offer_rate": 0.08710801393728224,
+    "avg_cost_per_offer": 551.8822,
+    "avg_recruiter_utilization": 0.2898550724637681,
+    "avg_views_utilization": 0.49964444444444445
+  },
+  "platforms": [
+    {
+      "platform": "DocCafe",
+      "cost": 791.665,
+      "active_recruiters": 0.0,
+      "recruiters_assigned": 3.0,
+      "active_pct": 0.0,
+      "views_pct": null,
+      "submissions": 2.0,
+      "interviews": 0,
+      "offers": 0,
+      "cost_per_offer": null,
+      "share_of_offers": 0.0
+    },
+    {
+      "platform": "Indeed",
+      "cost": 1527.2,
+      "active_recruiters": 0.0,
+      "recruiters_assigned": 4.0,
+      "active_pct": 0.0,
+      "views_pct": null,
+      "submissions": 33.0,
+      "interviews": 8.0,
+      "offers": 2.0,
+      "cost_per_offer": 763.6,
+      "share_of_offers": 0.08
+    },
+    {
+      "platform": "LinkedIn",
+      "cost": 2816.0,
+      "active_recruiters": 0.0,
+      "recruiters_assigned": 89.0,
+      "active_pct": 0.0,
+      "views_pct": null,
+      "submissions": 37.0,
+      "interviews": 12.0,
+      "offers": 0,
+      "cost_per_offer": null,
+      "share_of_offers": 0.0
+    },
+    {
+      "platform": "Monster",
+      "cost": 1332.815,
+      "active_recruiters": 0.0,
+      "recruiters_assigned": 0.0,
+      "active_pct": null,
+      "views_pct": null,
+      "submissions": 39.0,
+      "interviews": 4.0,
+      "offers": 1.0,
+      "cost_per_offer": 1332.815,
+      "share_of_offers": 0.04
+    },
+    {
+      "platform": "Resume-Library",
+      "cost": 125.0,
+      "active_recruiters": 1.0,
+      "recruiters_assigned": 3.0,
+      "active_pct": 0.3333333333333333,
+      "views_pct": 0.49964444444444445,
+      "submissions": 9.0,
+      "interviews": 3.0,
+      "offers": 1.0,
+      "cost_per_offer": 125.0,
+      "share_of_offers": 0.04
+    },
+    {
+      "platform": "SignalHire",
+      "cost": 0,
+      "active_recruiters": 43.0,
+      "recruiters_assigned": 43.0,
+      "active_pct": 1.0,
+      "views_pct": null,
+      "submissions": 0,
+      "interviews": 0,
+      "offers": 0,
+      "cost_per_offer": null,
+      "share_of_offers": 0.0
+    },
+    {
+      "platform": "Vivian",
+      "cost": 3750.0,
+      "active_recruiters": 28.0,
+      "recruiters_assigned": 69.0,
+      "active_pct": 0.4057971014492754,
+      "views_pct": null,
+      "submissions": 37.0,
+      "interviews": 0,
+      "offers": 9.0,
+      "cost_per_offer": 416.6666666666667,
+      "share_of_offers": 0.36
+    },
+    {
+      "platform": "Job Diva",
+      "cost": 1075.0,
+      "active_recruiters": null,
+      "recruiters_assigned": null,
+      "active_pct": null,
+      "views_pct": null,
+      "submissions": 88.0,
+      "interviews": 6.0,
+      "offers": 8.0,
+      "cost_per_offer": 134.375,
+      "share_of_offers": 0.32
+    },
+    {
+      "platform": "CareerBuilder",
+      "cost": 968.5,
+      "active_recruiters": null,
+      "recruiters_assigned": null,
+      "active_pct": null,
+      "views_pct": null,
+      "submissions": 19.0,
+      "interviews": 1.0,
+      "offers": 1.0,
+      "cost_per_offer": 968.5,
+      "share_of_offers": 0.04
+    },
+    {
+      "platform": "Dice",
+      "cost": 869.225,
+      "active_recruiters": null,
+      "recruiters_assigned": null,
+      "active_pct": null,
+      "views_pct": null,
+      "submissions": 10.0,
+      "interviews": 3.0,
+      "offers": 0,
+      "cost_per_offer": null,
+      "share_of_offers": 0.0
+    },
+    {
+      "platform": "Facebook",
+      "cost": 291.65,
+      "active_recruiters": null,
+      "recruiters_assigned": null,
+      "active_pct": null,
+      "views_pct": null,
+      "submissions": 7.0,
+      "interviews": 0,
+      "offers": 2.0,
+      "cost_per_offer": 145.825,
+      "share_of_offers": 0.08
+    },
+    {
+      "platform": "Zoominfo",
+      "cost": 0,
+      "active_recruiters": null,
+      "recruiters_assigned": null,
+      "active_pct": null,
+      "views_pct": null,
+      "submissions": 0,
+      "interviews": 0,
+      "offers": 0,
+      "cost_per_offer": null,
+      "share_of_offers": 0.0
+    },
+    {
+      "platform": "Referred",
+      "cost": 250.0,
+      "active_recruiters": null,
+      "recruiters_assigned": null,
+      "active_pct": null,
+      "views_pct": null,
+      "submissions": 6.0,
+      "interviews": 0,
+      "offers": 1.0,
+      "cost_per_offer": 250.0,
+      "share_of_offers": 0.04
+    }
+  ],
+  "trend": [
+    {
+      "period": "2026-09-15",
+      "cost": 13797.055,
+      "submissions": 287.0,
+      "interviews": 37.0,
+      "offers": 25.0
+    }
+  ]
+}

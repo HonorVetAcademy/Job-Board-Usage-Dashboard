@@ -1,0 +1,14 @@
+period_ending,platform,cost,recruiters_assigned,active_recruiters,views_used,active_postings,applications,contacts_made,responses_received,submissions,interviews,offers,period_length_days,notes
+2026-09-15,DocCafe,791.665,3,0,,,,,0,2.0,0.0,0.0,15,Sheet5 (per-recruiter activity). No cost/submissions/interviews/offers in this export.
+2026-09-15,Indeed,1527.2,4,0,,,,,,33.0,8.0,2.0,15,Sheet9 (per-recruiter sourcing usage). Cost/submissions/interviews/offers not in this export.
+2026-09-15,LinkedIn,2816.0,89,0,,,,,,37.0,12.0,0.0,15,Usage Details tab. Figures are cumulative since contract start; pipeline computes period deltas.
+2026-09-15,Monster,1332.815,0,0,,35.0,,,,39.0,4.0,1.0,15,No per-recruiter activity in this export (roster only). Credit usage is cumulative for the current subscription term.
+2026-09-15,Resume-Library,125.0,3,1,616.0,,,431.0,0,9.0,3.0,1.0,15,"Monthly Report tab, most recent month block found: August."
+2026-09-15,SignalHire,,43,43,0,,,2728.0,2180.0,,,,15,Most recent monthly column found across account sheets: September 2026.
+2026-09-15,Vivian,3750.0,69,28,0,856,,660.0,0,37.0,0.0,9.0,15,Active Recruiters in Vivian tab (weekly proposal usage) + Active Jobs tab (current posting count).
+2026-09-15,Job Diva,1075.0,,,,,,,,88.0,6.0,8.0,15,No raw export parsed for this platform this period.
+2026-09-15,CareerBuilder,968.5,,,,8.0,,,,19.0,1.0,1.0,15,No raw export parsed for this platform this period.
+2026-09-15,Dice,869.225,,,,35.0,,,,10.0,3.0,0.0,15,No raw export parsed for this platform this period.
+2026-09-15,Facebook,291.65,,,,,,,,7.0,,2.0,15,No raw export parsed for this platform this period.
+2026-09-15,Zoominfo,,,,,,,,,,,,15,No raw export parsed for this platform this period.
+2026-09-15,Referred,250.0,,,,,,,,6.0,,1.0,15,No raw export parsed for this platform this period.
